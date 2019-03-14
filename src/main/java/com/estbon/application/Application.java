@@ -1,4 +1,4 @@
-package com.estbon.springboot;
+package com.estbon.application;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

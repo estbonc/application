@@ -1,4 +1,4 @@
-package com.estbon.springboot.config;
+package com.estbon.application.config;
 
 import com.alibaba.druid.support.http.StatViewServlet;
 import com.alibaba.druid.support.http.WebStatFilter;
