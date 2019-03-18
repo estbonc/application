@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="icon" href="favicon.ico">
+    <meta name="居然设计家-统一登录服务" content="居然设计家-统一登录服务">
+    <title>居然设计家-统一登录服务</title>
+    <base href="/sso/static/vue/">
+    <script type="text/javascript">
+        /* eslint-disable no-alert, no-console */
+        var config= {
+            csrfKey: '_csrf',
+            csrfValue: '448a7e98-c5af-41dc-8c32-59a768a4ecc6'
+        }
+        // growing io 统计
+        if ('alpha' === 'prod' || 'alpha' === 'prodlv' ){
+            !function(e,t,n,g,i){e[i]=e[i]||function(){(e[i].q=e[i].q||[]).push(arguments)},n=t.createElement("script"),tag=t.getElementsByTagName("script")[0],n.async=1,n.src=('https:'==document.location.protocol?'https://':'http://')+g,tag.parentNode.insertBefore(n,tag)}(window,document,"script","assets.growingio.com/2.1/gio.js","gio");
+            gio('init','a0b8f1838a1126e3', {});
+            gio('config', {'hashtag':true});
+            gio('send');
+        } else {
+            window.gio = function () {
+                console.log('this is a growing io msg')
+            }
+        }
+        /* eslint-disable no-alert, no-console */
+    </script>
+    <style type="text/css">
+        .browser-tips {
+            width: 100%;
+            text-align: center;
+            height: 100%;
+            line-height: 100vh;
+            background-color: #fff;
+            z-index: 888;
+            position: fixed;
+            font-size: 12px;
+        }
+    </style>
+    <link href="css/app.655e9bf0.css" rel="preload" as="style">
+    <link href="css/chunk-vendors.7d400fa7.css" rel="preload" as="style">
+    <link href="js/app.7db43a1b.js" rel="preload" as="script">
+    <link href="js/chunk-vendors.ce829a40.js" rel="preload" as="script">
+    <link href="css/chunk-vendors.7d400fa7.css" rel="stylesheet">
+    <link href="css/app.655e9bf0.css" rel="stylesheet">
+</head>
+<body>
+<!--[if lte IE 9]>
+<p class="browser-tips">您的浏览器版本过低，请升级浏览器获得更好的体验。 </p>
+<![endif]-->
+<noscript>
+    <strong>We're sorry but vue-cli3-js doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+</noscript>
+<div id="app"></div>
+<!-- built files will be auto injected -->
+<script type="text/javascript" src="js/chunk-vendors.ce829a40.js"></script>
+<script type="text/javascript" src="js/app.7db43a1b.js"></script>
+</body>
+</html>
