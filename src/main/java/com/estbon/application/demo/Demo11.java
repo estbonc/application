@@ -1,7 +1,7 @@
 package com.estbon.application.demo;
 
 
-import com.estbon.gradle.bean.enums.QuoteRoomEnum;
+import com.estbon.application.bean.enums.QuoteRoomEnum;
 
 /**
  * @author liushuaishuai
