@@ -8,11 +8,6 @@
     <artifactId>application</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-
-    <!--
-          这里使用官方最新的版本，官方推荐建议继承默认的springboot配置
-          继承后，项目的编译级别会自动变为jdk1.6版本。
-    -->
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
@@ -23,13 +18,17 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
+
         <spring-cloud.version>Dalston.SR2</spring-cloud.version>
         <spring-boot-starter-redis-version>1.3.2.RELEASE</spring-boot-starter-redis-version>
-        <com.alibaba.fastjson.version>1.2.7</com.alibaba.fastjson.version>
         <springfox-swagger.version>2.7.0</springfox-swagger.version>
+
+        <com.alibaba.druid.version>1.1.4</com.alibaba.druid.version>
+        <com.alibaba.fastjson.version>1.2.7</com.alibaba.fastjson.version>
+        <commons-lang3.version>3.4</commons-lang3.version>
+        <lombok.version>1.16.18</lombok.version>
+        <mysql.version>6.0.6</mysql.version>
     </properties>
-
-
 
     <!--
           添加一个web应用所需要的依赖,它会自动引入tomcat内置容器、log4j、jackson等通用的依赖
@@ -55,13 +54,13 @@
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>druid</artifactId>
-            <version>1.1.4</version>
+            <version>${com.alibaba.druid.version}</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>6.0.6</version>
+            <version>${mysql.version}</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.mybatis/mybatis -->
         <dependency>
@@ -96,7 +95,7 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.16.18</version>
+            <version>${lombok.version}</version>
         </dependency>
 
         <dependency>
@@ -110,9 +109,14 @@
             <artifactId>springfox-swagger-ui</artifactId>
             <version>${springfox-swagger.version}</version>
         </dependency>
-
-
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>${commons-lang3.version}</version>
+        </dependency>
     </dependencies>
+
+
     <build>
         <plugins>
             <plugin>
