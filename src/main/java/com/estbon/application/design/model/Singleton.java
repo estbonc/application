@@ -1,10 +1,10 @@
-package com.estbon.application.bean;
+package com.estbon.application.design.model;
 
 /**
  * @author liushuaishuai
  * @version 1.0
  * @date 2019/3/2 18:00
- * @description
+ * @description 静态内部类实现单例模式
  */
 public class Singleton {
 
