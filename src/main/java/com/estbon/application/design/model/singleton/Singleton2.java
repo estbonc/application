@@ -1,4 +1,4 @@
-package com.estbon.application.design.model;
+package com.estbon.application.design.model.singleton;
 
 /**
  * @author liushuaishuai
