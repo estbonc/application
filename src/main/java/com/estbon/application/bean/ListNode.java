@@ -1,6 +1,7 @@
 package com.estbon.application.bean;
 
 import lombok.Data;
+import lombok.experimental.Accessors;
 
 /**
  * @author liushuaishuai
@@ -9,6 +10,7 @@ import lombok.Data;
  * remark: https://leetcode.com/problems/reverse-linked-list/
  */
 @Data
+@Accessors(chain = true)
 public class ListNode {
 
     int val;
