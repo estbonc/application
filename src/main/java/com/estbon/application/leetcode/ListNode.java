@@ -1,4 +1,4 @@
-package com.estbon.application.bean;
+package com.estbon.application.leetcode;
 
 import lombok.Data;
 import lombok.experimental.Accessors;

@@ -1,29 +1,14 @@
-package com.estbon.application.bean;
+package com.estbon.application.leetcode;
 
 import java.util.HashMap;
 
 /**
  * @author liushuaishuai
- * @date 2019/3/5 23:20
- * <p>
- * remark: https://leetcode.com/problems/reverse-linked-list/
+ * @version 1.0
+ * @date 2019/4/9 19:39
+ * @description
  */
-public class Solution {
-
-
-    public ListNode revertList(ListNode head) {
-
-        ListNode prev = null;
-        ListNode curr = head;
-        while (curr != null) {
-            ListNode nextTemp = curr.next;
-            curr.next = prev;
-            prev = curr;
-            curr = nextTemp;
-        }
-        return prev;
-    }
-
+public class LeetCode1 {
 
     public int[] twoSum(int[] nums, int target) {
 //        for (int i = 0; i < nums.length; i++) {
@@ -54,15 +39,13 @@ public class Solution {
     }
 
     public static void main(String[] args) {
-        Solution solution = new Solution();
+        LeetCode1 leetCode1 = new LeetCode1();
         int[] arr = {2, 3, 4, 5};
 
-        int[] ints = solution.twoSum(arr, 6);
+        int[] ints = leetCode1.twoSum(arr, 6);
         for (int a : ints) {
             System.out.println(a);
         }
 
     }
-
-
 }
