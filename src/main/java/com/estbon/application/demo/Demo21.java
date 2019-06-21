@@ -16,7 +16,7 @@ public class Demo21 {
     public static void main(String[] args) {
 
 
-        int a = 60; /* 60 = 0011 1100 */
+        int a = 60; /* 60 = 00o*/
         int b = 13; /* 13 = 0000 1101 */
         int c = 0;
         System.out.println("a = " + a);
