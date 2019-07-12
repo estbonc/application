@@ -57,7 +57,4 @@ swagger:
     title: example-project
     description:
 
-lss:
-  name: example
-  age: 18
 
