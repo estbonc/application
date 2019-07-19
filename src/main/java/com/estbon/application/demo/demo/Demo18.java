@@ -1,7 +1,10 @@
 package com.estbon.application.demo.demo;
 
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 
 /**
  * @author liushuaishuai
@@ -17,6 +20,27 @@ public class Demo18 {
         boolean validDate = isValidDate(time);
         System.out.println(time);
         System.out.println(validDate);
+
+        Date date = addDays(new Date(), -1);
+
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+        String format1 = format.format(date);
+        System.out.println(format1);
+
+        try {
+            Date parse = format.parse(format1);
+
+            System.out.println(date.getTime());
+
+            System.out.println(parse.getTime());
+
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+
+
+
     }
 
 
@@ -34,5 +58,32 @@ public class Demo18 {
         }
         return convertSuccess;
     }
+
+    /**
+     * 计算日期加减
+     *
+     * @param inDate  初始日期
+     * @param addDate 要加的日期
+     * @param field   要加的域
+     * @return 结果日期
+     */
+    private static Date addDates(final Date inDate, final int addDate, final int field) {
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(inDate);
+        calendar.add(field, addDate);
+        return calendar.getTime();
+    }
+
+    /**
+     * 日期加减天数
+     *
+     * @param inDate 初始日期
+     * @param addDay 要加的天数(负值代表减)
+     * @return 结果日期
+     */
+    public static Date addDays(final Date inDate, final int addDay) {
+        return addDates(inDate, addDay, Calendar.DAY_OF_MONTH);
+    }
+
 
 }
