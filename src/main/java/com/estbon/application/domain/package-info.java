@@ -4,4 +4,4 @@
  * @date 2018/7/26 10:22
  * @description
  */
-package com.estbon.application.dao;
+package com.estbon.application.domain;

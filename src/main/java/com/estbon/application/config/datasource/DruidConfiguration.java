@@ -1,4 +1,4 @@
-package com.estbon.application.config;
+package com.estbon.application.config.datasource;
 
 import com.alibaba.druid.support.http.StatViewServlet;
 import com.alibaba.druid.support.http.WebStatFilter;
