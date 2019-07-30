@@ -17,9 +17,6 @@ import javax.persistence.EntityManager;
 import javax.sql.DataSource;
 import java.util.Map;
 
-/**
- * @author stone
- */
 @Configuration
 @EnableTransactionManagement
 @EnableJpaRepositories(
@@ -47,7 +44,7 @@ public class SecondaryConfig {
                 .dataSource(secondaryDataSource)
                 .properties(getVendorProperties(secondaryDataSource))
                 //设置实体类所在位置
-                .packages("com.gaodun.storm.eplearning.domain.secondary.model")
+                .packages("com.estbon.application.domain.secondary.model")
                 .persistenceUnit("secondaryPersistenceUnit")
                 .build();
     }
