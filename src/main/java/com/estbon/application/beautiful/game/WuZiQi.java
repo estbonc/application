@@ -1,4 +1,4 @@
-package com.estbon.application.game;
+package com.estbon.application.beautiful.game;
 
 import java.util.Scanner;
 

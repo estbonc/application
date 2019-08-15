@@ -1,4 +1,4 @@
-package com.estbon.application.game;
+package com.estbon.application.beautiful.game;
 
 public class WuZiQiHuaQiPan {
     public static void main(String[] args) {

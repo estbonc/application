@@ -1,4 +1,4 @@
-package com.estbon.application.leetcode;
+package com.estbon.application.beautiful.leetcode;
 
 /**
  * @author liushuaishuai

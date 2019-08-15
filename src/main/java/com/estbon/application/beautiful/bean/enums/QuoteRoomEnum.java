@@ -1,4 +1,4 @@
-package com.estbon.application.bean.enums;
+package com.estbon.application.beautiful.bean.enums;
 
 import com.google.common.collect.Lists;
 

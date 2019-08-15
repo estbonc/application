@@ -1,4 +1,4 @@
-package com.estbon.application.bean;
+package com.estbon.application.beautiful.bean;
 
 import java.util.Stack;
 

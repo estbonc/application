@@ -1,4 +1,4 @@
-package com.estbon.application.alibaba;
+package com.estbon.application.beautiful.alibaba;
 
 
 /**

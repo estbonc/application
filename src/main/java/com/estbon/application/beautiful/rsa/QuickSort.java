@@ -1,4 +1,4 @@
-package com.estbon.application.rsa;
+package com.estbon.application.beautiful.rsa;
 
 /**
  * @author liushuaishuai

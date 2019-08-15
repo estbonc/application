@@ -1,6 +1,7 @@
 package com.estbon.application.demo.demo;
 
 
+import javax.xml.crypto.Data;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -16,29 +17,16 @@ public class Demo18 {
 
 
     public static void main(String[] args) {
-        String time = "2019-12-11";
-        boolean validDate = isValidDate(time);
-        System.out.println(time);
-        System.out.println(validDate);
-
         Date date = addDays(new Date(), -1);
-
-        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         String format1 = format.format(date);
-        System.out.println(format1);
 
-        try {
-            Date parse = format.parse(format1);
+        Date date1 = new Date();
+        System.out.println(date1);
 
-            System.out.println(date.getTime());
-
-            System.out.println(parse.getTime());
-
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-
-
+        long l = System.currentTimeMillis();
+        Date date2 = new Date(l);
+        System.out.println(date2);
 
 
     }
