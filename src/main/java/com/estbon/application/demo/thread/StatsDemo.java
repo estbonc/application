@@ -36,16 +36,23 @@ public class StatsDemo {
      * 而过多的线程又会 由于频繁的上下文切换导致整个系统的速度变缓——殊途而同归。队列的长度至关重要，它必须得是有界的，这样如果线程池不堪重负了它可以暂时拒绝掉新的请求。
      * ExecutorService 默认的实现是一个无界的 LinkedBlockingQueue。
      */
-    private static ThreadPoolExecutor executor = new ThreadPoolExecutor(corePoolSize, corePoolSize + 1, 10l, TimeUnit.SECONDS,
-            new LinkedBlockingQueue<Runnable>(1000));
+    private static int maximumPoolSize = 10;
+    private static ThreadPoolExecutor executor = new ThreadPoolExecutor(corePoolSize, maximumPoolSize, 10l, TimeUnit.SECONDS,
+            new LinkedBlockingQueue<Runnable>(10));
 
     public static void main(String[] args) throws InterruptedException {
+        System.out.println("corePoolSize:" + corePoolSize);
+        System.out.println("maximumPoolSize:" + maximumPoolSize);
         List<Future<String>> resultList = new ArrayList<Future<String>>();
         //使用submit提交异步任务，并且获取返回值为future
-        resultList.add(executor.submit(new Stats("任务A", 1000)));
-        resultList.add(executor.submit(new Stats("任务B", 1000)));
-        resultList.add(executor.submit(new Stats("任务C", 1000)));
-        resultList.add(executor.submit(new Stats("任务D", 1000)));
+
+        for (int i = 0; i < 20; i++) {
+            resultList.add(executor.submit(new Stats("任务" + i, 1000)));
+        }
+//        resultList.add(executor.submit(new Stats("任务A", 1000)));
+//        resultList.add(executor.submit(new Stats("任务B", 1000)));
+//        resultList.add(executor.submit(new Stats("任务C", 1000)));
+//        resultList.add(executor.submit(new Stats("任务D", 1000)));
 //        resultList.add(executor.submit(new Stats("任务E", 1000)));
         //遍历任务的结果
         for (Future<String> fs : resultList) {
@@ -74,10 +81,10 @@ public class StatsDemo {
 
         public String call() {
             try {
-                System.out.println(statsName + " do stats begin at " + startTime);
+                System.out.println("ThreadName:" + Thread.currentThread().getName() + statsName + " do stats begin at " + startTime);
                 //模拟任务执行时间
                 Thread.sleep(runTime);
-                System.out.println(statsName + " do stats complete at " + sdf.format(new Date()));
+                System.out.println("ThreadName:" + Thread.currentThread().getName() + statsName + " do stats complete at " + sdf.format(new Date()));
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
