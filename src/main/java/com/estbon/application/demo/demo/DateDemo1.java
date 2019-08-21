@@ -1,8 +1,6 @@
 package com.estbon.application.demo.demo;
 
 
-import javax.xml.crypto.Data;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -13,7 +11,7 @@ import java.util.Date;
  * @date 2018/9/11 14:16
  * @description 日期时间格式化
  */
-public class Demo18 {
+public class DateDemo1 {
 
 
     public static void main(String[] args) {

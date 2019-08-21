@@ -6,6 +6,7 @@ import com.xiaoleilu.hutool.json.JSONUtil;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 import java.util.UUID;
 
 /**
@@ -25,8 +26,12 @@ public class Demo17 {
 
 
         Map<Long, Apple> map = new HashMap<>();
+        Apple red = new Apple(2, "red");
+        System.out.println("hashCode:"+ red.hashCode());
+        int i = Objects.hash(red);
+        System.out.println(i);
 
-        map.put(1l, new Apple(2, "red"));
+        map.put(1l, red);
         map.put(2l, new Apple(3, "red"));
 
         System.out.println(JSONUtil.parseFromMap(map));
