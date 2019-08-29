@@ -1,4 +1,4 @@
-package com.estbon.application.demo.example;
+package com.estbon.application.demo.bean;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -13,7 +13,9 @@ import lombok.ToString;
 @AllArgsConstructor
 @ToString
 @NoArgsConstructor
-public class Test {
+public class StreamTestBean {
+
     private Integer id;
+
     private Integer count;
 }

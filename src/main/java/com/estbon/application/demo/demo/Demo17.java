@@ -1,6 +1,6 @@
 package com.estbon.application.demo.demo;
 
-import com.estbon.application.demo.example.Apple;
+import com.estbon.application.demo.bean.Apple;
 import com.xiaoleilu.hutool.json.JSONUtil;
 
 import java.util.Date;

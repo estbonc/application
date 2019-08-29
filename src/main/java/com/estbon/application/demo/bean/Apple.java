@@ -1,4 +1,4 @@
-package com.estbon.application.demo.example;
+package com.estbon.application.demo.bean;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
