@@ -1,4 +1,4 @@
-package com.estbon.application.demo.thread;
+package com.estbon.application.service;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -20,7 +20,7 @@ public class ScheduledService {
         log.info("当前时间：{}", new Date());
     }
 
-    @Scheduled(cron = "0/5 * * * * *")
+    @Scheduled(cron = "0 0 0/1 * * *")
     public void scheduled2() {
         log.info("当前时间:{}", new Date());
     }
