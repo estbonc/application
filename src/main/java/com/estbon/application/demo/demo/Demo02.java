@@ -1,12 +1,25 @@
 package com.estbon.application.demo.demo;
 
+import java.time.Month;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
 /**
  * 数组测试
  */
 public class Demo02 {
 
     public static void main(String[] args) {
+        Month month = Month.of(12);
+        System.out.println(month);
 
+
+        String abc = "1,2,3,4";
+        List<Long> collect = Stream.of(abc.split(",")).map(a -> Long.parseLong(a)).collect(Collectors.toList());
+        collect.stream().forEach(a -> {
+            System.out.println(a);
+        });
 
     }
 
