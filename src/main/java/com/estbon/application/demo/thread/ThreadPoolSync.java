@@ -12,7 +12,7 @@ import java.util.concurrent.TimeUnit;
  * 创建者 科帮网  https://blog.52itstyle.com
  * 创建时间    2018年4月17日
  */
-public class StatsDemo1 {
+public class ThreadPoolSync {
     final static SimpleDateFormat sdf = new SimpleDateFormat(
             "yyyy-MM-dd HH:mm:ss");
 

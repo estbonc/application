@@ -1,4 +1,4 @@
-package com.estbon.application.demo.demo;
+package com.estbon.application.demo.thread;
 
 /**
  * @author liushuaishuai

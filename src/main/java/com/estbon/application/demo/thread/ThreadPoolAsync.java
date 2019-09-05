@@ -7,12 +7,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.concurrent.*;
 
-/**
- * 多任务并行+线程池统计
- * 创建者 科帮网 https://blog.52itstyle.com
- * 创建时间    2018年4月17日
- */
-public class StatsDemo {
+public class ThreadPoolAsync {
     final static SimpleDateFormat sdf = new SimpleDateFormat(
             "yyyy-MM-dd HH:mm:ss");
 
