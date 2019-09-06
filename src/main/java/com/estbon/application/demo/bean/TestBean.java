@@ -13,7 +13,7 @@ import lombok.ToString;
 @AllArgsConstructor
 @ToString
 @NoArgsConstructor
-public class StreamTestBean {
+public class TestBean {
 
     private Integer id;
 

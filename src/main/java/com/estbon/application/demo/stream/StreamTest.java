@@ -1,7 +1,7 @@
 package com.estbon.application.demo.stream;
 
 
-import com.estbon.application.demo.bean.StreamTestBean;
+import com.estbon.application.demo.bean.TestBean;
 import com.google.common.collect.Lists;
 
 import java.util.List;
@@ -20,27 +20,27 @@ public class StreamTest {
     public static void main(String[] args) {
         List<Integer> b = Lists.newArrayList(1, 2, 3);
 
-        List<StreamTestBean> a = Lists.newArrayList();
-        a.add(new StreamTestBean(1, 4));
-        a.add(new StreamTestBean(1, 3));
-        a.add(new StreamTestBean(1, 2));
-        a.add(new StreamTestBean(2, 4));
-        a.add(new StreamTestBean(2, 444));
-        a.add(new StreamTestBean(2, 2));
+        List<TestBean> a = Lists.newArrayList();
+        a.add(new TestBean(1, 4));
+        a.add(new TestBean(1, 3));
+        a.add(new TestBean(1, 2));
+        a.add(new TestBean(2, 4));
+        a.add(new TestBean(2, 444));
+        a.add(new TestBean(2, 2));
 
-        List<StreamTestBean> result = Lists.newArrayList();
+        List<TestBean> result = Lists.newArrayList();
 
         //按paperId 分组
-        Map<Integer, List<StreamTestBean>> collect = a.stream().collect(Collectors.toMap(StreamTestBean::getId, value -> Lists.newArrayList(value),
-                (List<StreamTestBean> oldValueList, List<StreamTestBean> newValueList) -> {
+        Map<Integer, List<TestBean>> collect = a.stream().collect(Collectors.toMap(TestBean::getId, value -> Lists.newArrayList(value),
+                (List<TestBean> oldValueList, List<TestBean> newValueList) -> {
                     oldValueList.addAll(newValueList);
                     return oldValueList;
                 }
         ));
-        for (Map.Entry<Integer, List<StreamTestBean>> entry : collect.entrySet()) {
-            StreamTestBean t = new StreamTestBean();
+        for (Map.Entry<Integer, List<TestBean>> entry : collect.entrySet()) {
+            TestBean t = new TestBean();
             t.setId(entry.getKey());
-            int sum = entry.getValue().stream().mapToInt(StreamTestBean::getCount).sum();
+            int sum = entry.getValue().stream().mapToInt(TestBean::getCount).sum();
 
             t.setCount(sum);
             result.add(t);

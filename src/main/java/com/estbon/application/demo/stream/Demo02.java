@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
  * @date 2018/8/13 11:08
  * @description
  */
-public class Demo15 {
+public class Demo02 {
 
 
     public static void main(String[] args) {
