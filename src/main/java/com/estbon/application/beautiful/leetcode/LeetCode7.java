@@ -9,10 +9,14 @@ package com.estbon.application.beautiful.leetcode;
 public class LeetCode7 {
 
     public int reverse(int x) {
-//        if (x > 2 >> 32 || x < -2 << 32 - 1) {
-//            return 0;
-//        }
-        String y = x + "";
+
+        boolean negative = false;
+        String y = String.valueOf(x);
+        if (y.startsWith("-")) {
+            negative = true;
+            y = y.replaceAll("-", "");
+        }
+
         StringBuffer str = new StringBuffer();
         char[] chars = new char[y.length()];
         for (int i = 0; i < y.length(); i++) {
@@ -22,16 +26,38 @@ public class LeetCode7 {
         for (int i = chars.length - 1; i >= 0; i--) {
             str.append(chars[i]);
         }
+        String s = str.toString();
+        if (negative) {
+            s = "-" + str.toString();
+        }
+        long i  = Long.parseLong(s);
+        if (i > Integer.MAX_VALUE || i < Integer.MIN_VALUE) {
+            return 0;
+        }
 
-
-        return Integer.parseInt(str.toString());
+        return (int) i;
     }
 
 
     public static void main(String[] args) {
         LeetCode7 leetCode7 = new LeetCode7();
-        int reverse = leetCode7.reverse(321);
+        int reverse = leetCode7.reverse2(1234);
         System.out.println(reverse);
 
+    }
+
+    public int reverse2(int x) {
+        long temp = 0;
+
+        while(x != 0){
+            int pop = x % 10;
+            temp = temp * 10 + pop;
+
+            if(temp > Integer.MAX_VALUE || temp < Integer.MIN_VALUE){
+                return 0;
+            }
+            x /= 10;
+        }
+        return (int)temp;
     }
 }
