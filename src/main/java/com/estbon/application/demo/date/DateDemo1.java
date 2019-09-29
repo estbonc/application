@@ -1,6 +1,8 @@
 package com.estbon.application.demo.date;
 
 
+import org.apache.commons.lang3.time.DateUtils;
+
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -15,17 +17,16 @@ public class DateDemo1 {
 
 
     public static void main(String[] args) {
-        Date date = addDays(new Date(), -1);
+        Date date = addDays(new Date(), 20);
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         String format1 = format.format(date);
+        System.out.println(format1);
 
         Date date1 = new Date();
         System.out.println(date1);
 
-        long l = System.currentTimeMillis();
-        Date date2 = new Date(l);
-        System.out.println(date2);
-
+        int i = DateUtils.truncatedCompareTo(date1 ,date, Calendar.DAY_OF_MONTH);
+        System.out.println(i);
 
     }
 
