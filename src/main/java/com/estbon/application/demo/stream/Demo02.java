@@ -35,16 +35,12 @@ public class Demo02 {
                     return oldValueList;
                 }));
 
-        collect.entrySet().stream().forEach((key) -> {
-            System.out.println(key);
-        });
+        collect.entrySet().stream().forEach(System.out::println);
 
         System.out.println("===========================");
         Map<String, List<String>> collect1 = test.stream().collect(Collectors.groupingBy(key -> key));
 
-        collect1.entrySet().stream().forEach((key) -> {
-            System.out.println(key);
-        });
+        collect1.entrySet().stream().forEach(System.out::println);
 
 
     }
