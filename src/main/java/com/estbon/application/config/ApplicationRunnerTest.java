@@ -3,6 +3,7 @@ package com.estbon.application.config;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
+import org.springframework.core.Ordered;
 import org.springframework.stereotype.Component;
 
 import java.util.stream.Stream;
@@ -13,7 +14,7 @@ import java.util.stream.Stream;
  */
 @Component
 @Slf4j
-public class ApplicationRunnerTest implements ApplicationRunner {
+public class ApplicationRunnerTest implements ApplicationRunner , Ordered {
     @Override
     public void run(ApplicationArguments args) throws Exception {
 
@@ -28,5 +29,10 @@ public class ApplicationRunnerTest implements ApplicationRunner {
             log.info(a);
         });
         log.info("ApplicationRunnerTest  结束；");
+    }
+
+    @Override
+    public int getOrder() {
+        return 0;
     }
 }
