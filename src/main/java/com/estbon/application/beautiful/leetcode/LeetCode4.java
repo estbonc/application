@@ -16,7 +16,7 @@ public class LeetCode4 {
     public static void main(String[] args) {
 
         LeetCode4 leetCode4 = new LeetCode4();
-        int[] arr1 = {1, 2, 3};
+        int[] arr1 = {1, 2, 4, 6, 8, 9, 10};
         int[] arr2 = {3, 5, 8};
         double medianSortedArrays = leetCode4.findMedianSortedArrays(arr1, arr2);
         System.out.println(medianSortedArrays);
