@@ -37,6 +37,10 @@ public class StreamTest {
                     return oldValueList;
                 }
         ));
+        System.out.println(collect);
+
+        Map<Integer, List<TestBean>> collect2 = a.stream().collect(Collectors.groupingBy(TestBean::getId));
+        System.out.println(collect2);
         for (Map.Entry<Integer, List<TestBean>> entry : collect.entrySet()) {
             TestBean t = new TestBean();
             t.setId(entry.getKey());

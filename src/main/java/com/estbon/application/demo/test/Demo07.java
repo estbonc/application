@@ -1,29 +1,41 @@
 package com.estbon.application.demo.test;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 /**
  * @author liushuaishuai
  * @version 1.0
- * @date 2018/4/16 13:49
- * @description 题目测试
+ * @date 2018/7/10 20:04
+ * @description  list 复制
  */
 public class Demo07 {
 
-    String str = new String("good");
-    char[] ch = {'a', 'b', 'c'};
 
     public static void main(String[] args) {
 
-        Demo07 demo = new Demo07();
-        demo.change(demo.str, demo.ch);
-        System.out.print(demo.str + " and ");
-        System.out.print(demo.ch);
-
-    }
-
-    public void change(String str, char[] ch) {
-        str = "test ok";
-        ch[0] = 'g';
+        List list = new ArrayList();
+        list.add(1);
+        list.add(2);
+        Demo07 demo14 = new Demo07();
+        demo14.getList(list);
     }
 
 
+
+    public void getList(List<Integer> list){
+        List<Integer> result = new ArrayList<>(list);
+
+        List<Integer> list1 = new ArrayList<>();
+        list1.add(2);
+        list1.add(3);
+
+        Collections.copy(list1, result);
+        for(Integer i :result){
+            System.out.println(i);
+        }
+
+
+    }
 }

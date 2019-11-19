@@ -20,7 +20,7 @@ public class ExampleB extends ExampleA {
 
     public void test1(){
         System.out.println("我是B的test1方法");
-        super.test1();
+//        super.test1();
     }
 
     public void test2(){
@@ -31,8 +31,8 @@ public class ExampleB extends ExampleA {
     public static void main(String[] args) {
         ExampleB exampleB = new ExampleB();
         exampleB.test1();
-        ExampleA exampleA = new ExampleA();
-        exampleA.test1();
+//        ExampleA exampleA = new ExampleA();
+//        exampleA.test1();
     }
 
 

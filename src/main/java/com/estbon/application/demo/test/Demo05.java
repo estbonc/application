@@ -9,7 +9,7 @@ import java.util.List;
  * @date 2018/6/6 17:45
  * @description list切分，测试题
  */
-public class Demo12 {
+public class Demo05 {
 
 
     public static void main(String[] args) {
@@ -18,8 +18,8 @@ public class Demo12 {
         for (int i = 0; i < 24; i++) {
             list.add(i);
         }
-        Demo12 demo12 = new Demo12();
-        demo12.getList(list, 22);
+        Demo05 demo05 = new Demo05();
+        demo05.getList(list, 22);
     }
 
     private List<List<Integer>> getList(List<Integer> list, int a) {

@@ -9,7 +9,7 @@ import java.math.RoundingMode;
  * @date 2018/4/28 19:37
  * @description BigDecimal类学习
  */
-public class Demo10 {
+public class Demo04 {
 
     public static void main(String[] args) {
 

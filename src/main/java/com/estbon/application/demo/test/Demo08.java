@@ -6,7 +6,7 @@ package com.estbon.application.demo.test;
  * @date 2019/3/20 11:06
  * @description 位运算
  */
-public class Demo21 {
+public class Demo08 {
 
     public static void main(String[] args) {
 

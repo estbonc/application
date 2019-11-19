@@ -1,6 +1,5 @@
 package com.estbon.application.demo.demo;
 
-import org.springframework.core.SpringVersion;
 
 /**
  * @author liushuaishuai
@@ -10,10 +9,10 @@ public class TmpDemo {
 
 
     public static void main(String[] args) {
-        Package aPackage = TmpDemo.class.getPackage();
+        String format = String.format("%d%04d", "1014", 1234);
 
-        System.out.println(SpringVersion.getVersion());
-        System.out.println(aPackage.getImplementationVersion());
+        System.out.println(format);
+        System.out.println(Long.parseLong(format));
 
     }
 
