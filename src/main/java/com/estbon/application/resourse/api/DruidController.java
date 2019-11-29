@@ -8,8 +8,6 @@ import org.springframework.web.bind.annotation.RestController;
  * Author: liushuaishuai
  * Email: liushuaishuai@91zdan.com
  * Date: 2017-10-27 23:41
- * Description:
- * History:
  */
 @RestController
 @RequestMapping("/")

@@ -1,10 +1,10 @@
 package com.estbon.application.config;
 
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Component;
-
-import java.util.stream.Stream;
 
 /**
  * @author liushuaishuai
@@ -13,14 +13,20 @@ import java.util.stream.Stream;
 @Component
 @Slf4j
 public class CommandLineRunnerTest implements CommandLineRunner {
+
+    @Autowired
+    private RedisTemplate redisTemplate;
+
+
     @Override
     public void run(String... args) throws Exception {
-
-        log.info("CommandLineRunnerTest  开始；");
-        Stream.of(args).forEach(a -> {
-            log.info(a);
-        });
-
-        log.info("CommandLineRunnerTest  结束；");
+//        while (true) {
+//            System.out.println("Waiting for a message in the queue");
+//            long messages = (long) redisTemplate.opsForList().rightPop("list");
+//            System.out.println("Got the message");
+//            System.out.println("KEY: list" + " VALUE:" + messages);
+//            //Do some processing with the payload
+//            System.out.println("Message received:" + messages);
+//        }
     }
 }
