@@ -23,12 +23,10 @@ public class Demo03 {
 
         String[] abc = {"hello world", "good morning"};
         List<String[]> collect = Stream.of(abc).map(a -> a.split("")).collect(Collectors.toList());
-        collect.stream().forEach(aa -> System.out.println(aa));
+        collect.forEach(System.out::println);
 
-//        List<String> collect1 = Stream.of(abc).flatMap(a -> Stream.of(a.split(""))).collect(Collectors.toList());
-//        collect1.stream().forEach(aa -> {
-//            System.out.println(aa);
-//        });
+        List<String> collect1 = Stream.of(abc).flatMap(a -> Stream.of(a.split(""))).collect(Collectors.toList());
+        collect1.forEach(System.out::println);
 
         Stream.of("one", "two", "three", "four")
                 .filter(e -> e.length() > 3)

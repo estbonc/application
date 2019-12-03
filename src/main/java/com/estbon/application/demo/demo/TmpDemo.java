@@ -9,7 +9,7 @@ public class TmpDemo {
 
 
     public static void main(String[] args) {
-        String format = String.format("%d%04d", "1014", 1234);
+        String format = String.format("%s%04d", "1014", 1234);
 
         System.out.println(format);
         System.out.println(Long.parseLong(format));
