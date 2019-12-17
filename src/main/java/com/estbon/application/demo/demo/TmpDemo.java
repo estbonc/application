@@ -14,6 +14,13 @@ public class TmpDemo {
         System.out.println(format);
         System.out.println(Long.parseLong(format));
 
+
+        String adc = "你好123ads你好你好你好你好你好";
+
+        CharSequence charSequence = adc.subSequence(0, 10);
+        String substring = adc.substring( 10);
+        System.out.println(charSequence);
+        System.out.println(substring);
     }
 
 

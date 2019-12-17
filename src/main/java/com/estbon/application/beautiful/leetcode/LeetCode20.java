@@ -1,7 +1,5 @@
 package com.estbon.application.beautiful.leetcode;
 
-import com.google.common.collect.Maps;
-
 import java.util.HashMap;
 import java.util.Stack;
 
@@ -14,7 +12,7 @@ public class LeetCode20 {
 
 
     public static void main(String[] args) {
-        String ss = "()[()()()()()({}{}{}{}{})]{}";
+        String ss = "){";
 
         boolean valid = isValid(ss);
         System.out.println(valid);
@@ -25,10 +23,13 @@ public class LeetCode20 {
     public static boolean isValid(String s) {
         Stack<Character> stack = new Stack<Character>();
 
-        if (s == null || s.length() < 1) {
+        if (s == null) {
             return false;
         }
-        HashMap<Character, Character> map = Maps.newHashMap();
+        if (s.length() == 0) {
+            return true;
+        }
+        HashMap<Character, Character> map = new HashMap<>();
         map.put('(', ')');
         map.put('{', '}');
         map.put('[', ']');
@@ -41,7 +42,7 @@ public class LeetCode20 {
                 stack.push(s.charAt(i));
             } else {
                 char top = stack.empty() ? '#' : stack.pop();
-                if(map.get(top) != c){
+                if (map.get(top) == null || map.get(top) != c) {
                     return false;
                 }
             }
