@@ -1,26 +1,27 @@
 package com.estbon.application.demo.demo;
 
 
+import com.google.common.collect.Lists;
+
+import java.util.List;
+
 /**
  * @author liushuaishuai
  * @date 2019/10/16 15:30
  */
 public class TmpDemo {
+    List<Integer> list = Lists.newArrayList(1, 2, 3, 4);
 
 
     public static void main(String[] args) {
-        String format = String.format("%s%04d", "1014", 1234);
 
-        System.out.println(format);
-        System.out.println(Long.parseLong(format));
+        List<Integer> list = Lists.newArrayList(1, 2, 3, 4);
 
+        Integer[] integers = list.toArray(new Integer[0]);
 
-        String adc = "你好123ads你好你好你好你好你好";
-
-        CharSequence charSequence = adc.subSequence(0, 10);
-        String substring = adc.substring( 10);
-        System.out.println(charSequence);
-        System.out.println(substring);
+        for (int i = 0; i < integers.length; i++) {
+            System.out.println(integers[i]);
+        }
     }
 
 

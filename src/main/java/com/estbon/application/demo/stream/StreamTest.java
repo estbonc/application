@@ -6,6 +6,7 @@ import com.google.common.collect.Lists;
 
 import java.util.List;
 import java.util.Map;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 /**
@@ -21,6 +22,11 @@ public class StreamTest {
         List<Integer> b = Lists.newArrayList(1, 2, 3);
 
         List<TestBean> a = Lists.newArrayList();
+
+        Map<Integer, TestBean> beanMap = a.stream().collect(Collectors.toMap(TestBean::getId, Function.identity()));
+
+        System.out.println("beanMap  "+ beanMap);
+
         a.add(new TestBean(1, 4));
         a.add(new TestBean(1, 3));
         a.add(new TestBean(1, 2));
