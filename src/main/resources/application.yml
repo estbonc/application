@@ -1,6 +1,6 @@
 # 端口号
 server:
-  port: 8099
+  port: 9090
   tomcat:
     max-threads: 1000
 
@@ -71,5 +71,21 @@ swagger:
     version: 0.0.1-SNAPSHOT
     title: example-project
     description:
+
+info:
+  head: head
+  body: body
+management:
+  endpoints:
+    web:
+      exposure:
+        #加载所有的端点，默认只加载了info、health
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
+    #可以关闭指定的端点
+    shutdown:
+      enabled: false
 
 

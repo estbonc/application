@@ -22,8 +22,11 @@ public class Demo9 {
         b.add(new Apple(1, "yellow"));
         b.add(new Apple(2, "yellow"));
         a.removeAll(b);
-        a.forEach(aaa -> {
-            System.out.println(aaa);
-        });
+        a.forEach(System.out::println);
+
+
+        double ceil = Math.ulp(3.01d);
+        System.out.println(ceil);
+
     }
 }
