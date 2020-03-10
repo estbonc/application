@@ -18,9 +18,7 @@ public class ReflectDemo2 {
         Class<Student> studentClass = Student.class;
 
         Field[] fields = studentClass.getFields();
-        Stream.of(fields).forEach(t -> {
-            System.out.println(t);
-        });
+        Stream.of(fields).forEach(System.out::println);
 
         System.out.println("--------------------->");
         Stream.of(fields).forEach(t -> {
