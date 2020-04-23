@@ -16,10 +16,8 @@ public class Demo02 {
 
 
         String abc = "1,2,3,4";
-        List<Long> collect = Stream.of(abc.split(",")).map(a -> Long.parseLong(a)).collect(Collectors.toList());
-        collect.stream().forEach(a -> {
-            System.out.println(a);
-        });
+        List<Long> collect = Stream.of(abc.split(",")).map(Long::parseLong).collect(Collectors.toList());
+        collect.forEach(System.out::println);
 
     }
 

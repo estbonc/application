@@ -23,8 +23,8 @@ public class Demo06 {
         }
     }
 
-    public static String generateShortUuid(String[] chars) {
-        StringBuffer shortBuffer = new StringBuffer();
+    private static String generateShortUuid(String[] chars) {
+        StringBuilder shortBuffer = new StringBuilder();
         String uuid = UUID.randomUUID().toString().replace("-", "");
         for (int i = 0; i < 16; i++) {
             String str = uuid.substring(i * 2, i * 2 + 2);

@@ -13,7 +13,7 @@ public class Demo05 {
 
 
     public static void main(String[] args) {
-        ArrayList list = new ArrayList();
+        List<Integer> list = new ArrayList();
 
         for (int i = 0; i < 24; i++) {
             list.add(i);
@@ -23,7 +23,7 @@ public class Demo05 {
     }
 
     private List<List<Integer>> getList(List<Integer> list, int a) {
-        ArrayList resultList = new ArrayList<>();
+        List<List<Integer>> resultList = new ArrayList<>();
         int size = list.size();
         int b = size % a;
         //数组的个数

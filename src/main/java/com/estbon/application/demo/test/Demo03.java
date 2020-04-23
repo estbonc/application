@@ -8,8 +8,8 @@ package com.estbon.application.demo.test;
  */
 public class Demo03 {
 
-    String str = new String("good");
-    char[] ch = {'a', 'b', 'c'};
+    private String str = new String("good");
+    private char[] ch = {'a', 'b', 'c'};
 
     public static void main(String[] args) {
 

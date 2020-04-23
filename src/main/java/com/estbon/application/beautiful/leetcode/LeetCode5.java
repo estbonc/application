@@ -9,10 +9,17 @@ public class LeetCode5 {
 
 
     public static void main(String[] args) {
-        String s = "babadjnlkjnnnnnnmmmmmmmnnnnnmmmmmmnmnmnmnmnnnnnnnnnnnnnnnmnnnnnnnnnnnnnnnnnnnnnnnnnnnn";
+        String s = "addaad";
         String s1 = longestPalindrome(s);
         System.out.println(s1);
     }
+
+
+
+
+
+
+
 
 
     public static String longestPalindrome(String s) {
