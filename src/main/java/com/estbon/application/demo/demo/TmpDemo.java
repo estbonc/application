@@ -1,8 +1,14 @@
 package com.estbon.application.demo.demo;
 
 
-import java.time.LocalDate;
-import java.time.LocalTime;
+import java.text.SimpleDateFormat;
+import java.util.Arrays;
+import java.util.Date;
+import java.util.Iterator;
+import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 /**
  * @author liushuaishuai
@@ -10,55 +16,45 @@ import java.time.LocalTime;
  */
 public class TmpDemo {
 
+    private static final String FORMAT_PATTERN_DATE_TIME = "yyyy-MM-dd HH:mm:ss";
 
-    private static final int ARRAY_LENGTH = 2;
-
+    private static List<String> list = new CopyOnWriteArrayList<>();
 
     public static void main(String[] args) {
-        TmpDemo demo = new TmpDemo();
 
-//
-//        System.out.println(LocalTime.now());
-//        System.out.println(LocalDate.now().getDayOfWeek().toString().equals("THURSDAY"));
-//
-//        System.out.println(LocalTime.now().getHour());
-//        System.out.println(LocalTime.now().getMinute());
-//        System.out.println(LocalTime.now().getSecond());
+        list.add("1");
+        list.add("2");
+        list.add("3");
 
-        System.out.println(demo.checkToUseCatch());
+        Iterator<String> iter = list.iterator();
+
+        // 存放10个线程的线程池
+        ExecutorService service = Executors.newFixedThreadPool(10);
+
+        // 执行10个任务(我当前正在迭代集合（这里模拟并发中读取某一list的场景）)
+        for (int i = 0; i < 10; i++) {
+            service.execute(() -> {
+                while (iter.hasNext()) {
+                    System.err.println(iter.next());
+                }
+            });
+        }
+
+        // 执行10个任务
+        for (int i = 0; i < 10; i++) {
+            service.execute(() -> {
+                list.add("121");// 添加数据
+            });
+        }
+
+        System.err.println(Arrays.toString(list.toArray()));
+
     }
 
 
-    public boolean checkToUseCatch() {
-        String weekDay = "THURSDAY";
-        String timeStart = "18:50";
-        String timeEnd = "20:00";
-        if (!weekDay.equals(LocalDate.now().getDayOfWeek().toString())) {
-            return false;
-        }
-        int nowHour = LocalTime.now().getHour();
-        int nowMinute = LocalTime.now().getMinute();
-        String[] startTimeArray = timeStart.split(":");
-        String[] endTimeArray = timeEnd.split(":");
-        if (startTimeArray.length != ARRAY_LENGTH || endTimeArray.length != ARRAY_LENGTH) {
-            return false;
-        }
-        int hourStart = Integer.parseInt(startTimeArray[0]);
-        int minuteStart = Integer.parseInt(startTimeArray[1]);
-        int hourEnd = Integer.parseInt(endTimeArray[0]);
-        int minuteEnd = Integer.parseInt(endTimeArray[1]);
-        if (nowHour < hourStart || nowHour > hourEnd) {
-            return false;
-        }
-        if (nowHour == hourStart) {
-            if (nowMinute < minuteStart) {
-                return false;
-            }
-        }
-        if (nowHour == hourEnd) {
-            return nowMinute <= minuteEnd;
-        }
-        return true;
+    public static String secondToStringDateTime(long time) {
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(FORMAT_PATTERN_DATE_TIME);
+        Date date = new Date(time * 1000);
+        return simpleDateFormat.format(date);
     }
-
 }
