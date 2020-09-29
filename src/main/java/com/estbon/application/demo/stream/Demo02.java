@@ -29,7 +29,7 @@ public class Demo02 {
         test.add("5");
         test.add("1");
 
-        Map<String, List<String>> collect = test.stream().collect(Collectors.toMap(key -> key, value -> Lists.newArrayList(value),
+        Map<String, List<String>> collect = test.stream().collect(Collectors.toMap(key -> key, Lists::newArrayList,
                 (List<String> newValueList, List<String> oldValueList) -> {
                     oldValueList.addAll(newValueList);
                     return oldValueList;

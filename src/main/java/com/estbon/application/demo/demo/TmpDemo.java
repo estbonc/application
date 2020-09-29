@@ -9,6 +9,8 @@ import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /**
  * @author liushuaishuai
@@ -21,6 +23,10 @@ public class TmpDemo {
     private static List<String> list = new CopyOnWriteArrayList<>();
 
     public static void main(String[] args) {
+
+        Stream<Long> longStream = Stream.of(1L, 2L, 0L, 0L, null, null);
+        longStream.sorted(Long::compareTo).collect(Collectors.toList()).forEach(System.out::println);
+
 
         list.add("1");
         list.add("2");
