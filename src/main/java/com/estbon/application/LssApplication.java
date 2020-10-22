@@ -12,10 +12,5 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 public class LssApplication {
     public static void main(String[] args) {
         SpringApplication.run(LssApplication.class, args);
-//        new SpringApplicationBuilder()
-//                .sources(Parent.class)
-//                .child(Application.class)
-//                .bannerMode(Banner.Mode.OFF)
-//                .run(args);
     }
 }
