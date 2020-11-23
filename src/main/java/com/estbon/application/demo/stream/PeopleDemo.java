@@ -7,7 +7,7 @@ import lombok.Data;
  * @date 2019/9/6 9:42
  */
 @Data
-public class Demo {
+public class PeopleDemo {
 
     private String name;
 
@@ -15,7 +15,7 @@ public class Demo {
 
     private String age;
 
-    public Demo(String age, Integer sex) {
+    public PeopleDemo(String age, Integer sex) {
         this.age = age;
         this.sex = sex;
     }
