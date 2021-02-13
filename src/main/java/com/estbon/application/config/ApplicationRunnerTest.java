@@ -19,15 +19,9 @@ public class ApplicationRunnerTest implements ApplicationRunner , Ordered {
     public void run(ApplicationArguments args) throws Exception {
 
         log.info("ApplicationRunnerTest  开始；");
-        args.getOptionNames().stream().forEach(a -> {
-            log.info(a);
-        });
-        args.getNonOptionArgs().stream().forEach(a -> {
-            log.info(a);
-        });
-        Stream.of(args.getSourceArgs()).forEach(a -> {
-            log.info(a);
-        });
+        args.getOptionNames().forEach(log::info);
+        args.getNonOptionArgs().forEach(log::info);
+        Stream.of(args.getSourceArgs()).forEach(log::info);
         log.info("ApplicationRunnerTest  结束；");
     }
 
