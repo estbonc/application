@@ -1,4 +1,4 @@
-package com.estbon.application.resourse.api;
+package com.estbon.application.resource.api;
 
 import com.estbon.application.redis.queue.RedisMessage;
 import com.xiaoleilu.hutool.geo.Location;
@@ -26,13 +26,17 @@ public class RedisResource {
     @Autowired
     private RedisTemplate<String, Object> redisTemplate;
 
+    @Autowired
+    private RedisTemplate<String, Object> redisTemplateJson;
+
+
     @GetMapping("/up")
     @ApiOperation("test")
     public void up() {
         Location location = new Location(1, 2);
         Map<Object, Point> memberCoordinateMap = new HashMap<>();
         memberCoordinateMap.put("shanghai", new Point(1, 2));
-        Long add = redisTemplate.opsForGeo().add("123", memberCoordinateMap);
+        Long add = redisTemplateJson.opsForGeo().add("123", memberCoordinateMap);
     }
 
 

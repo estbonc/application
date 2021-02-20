@@ -1,4 +1,4 @@
-package com.estbon.application.resourse.api;
+package com.estbon.application.resource.api;
 
 import com.estbon.application.service.IocServiceB;
 import org.springframework.web.bind.annotation.GetMapping;

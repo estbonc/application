@@ -68,8 +68,8 @@ spring:
 
 swagger:
   project:
-    version: 0.0.1-SNAPSHOT
-    title: example-project
+    version: 0.0.1-Phoenix
+    title: lss-king
     description:
 
 info:

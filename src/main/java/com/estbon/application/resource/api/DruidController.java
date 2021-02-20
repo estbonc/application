@@ -1,4 +1,4 @@
-package com.estbon.application.resourse.api;
+package com.estbon.application.resource.api;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;

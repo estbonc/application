@@ -1,12 +1,10 @@
 package com.estbon.application.config;
 
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.core.env.Environment;
 import org.springframework.util.StopWatch;
 import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.builders.PathSelectors;
@@ -37,7 +35,7 @@ public class SwaggerConfig {
 
     @Bean
     public Docket createRestApi(){
-        log.info("Start swagger");
+        log.error("Start swagger");
         StopWatch stopWatch = new StopWatch();
         stopWatch.start();
 
