@@ -1,6 +1,6 @@
 package com.estbon.application.spring;
 
-import com.xiaoleilu.hutool.date.DateTime;
+import cn.hutool.core.date.DateTime;
 import org.springframework.beans.factory.FactoryBean;
 import org.springframework.stereotype.Component;
 

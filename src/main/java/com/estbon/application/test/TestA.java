@@ -1,4 +1,4 @@
-package com.estbon.application.demo.test;
+package com.estbon.application.test;
 
 
 import cn.hutool.core.date.DatePattern;
@@ -9,15 +9,24 @@ import java.util.Date;
 
 /**
  * @author liushuaishuai
- * @date 2021/1/12 18:15
+ * @date 2021/4/1 16:51
  */
-public class Demo10 {
-
+public class TestA {
 
     public static void main(String[] args) {
 
-        System.out.println(DateUtil.format(getThisWeekMonday(new Date()), DatePattern.NORM_DATE_PATTERN));
+
+        System.out.println(DateUtil.beginOfDay(new Date()).getTime() / 1000);
+        System.out.println(DateUtil.endOfDay(new Date()).getTime() / 1000);
+
+        Date thisWeekMonday = getThisWeekMonday(new Date());
+        System.out.println(DateUtil.format(thisWeekMonday, DatePattern.NORM_DATE_PATTERN));
         System.out.println(DateUtil.format(getNextWeekMonday(new Date()), DatePattern.NORM_DATE_PATTERN));
+
+        Date date = new Date();
+        System.out.println(DateUtil.beginOfWeek(date).getTime() / 1000);
+        System.out.println(DateUtil.endOfWeek(date).getTime() / 1000);
+
     }
 
     /**
@@ -44,7 +53,7 @@ public class Demo10 {
     }
 
     /**
-     * 获取下周一
+     * 获取下周一时间
      *
      * @param date .
      * @return .
@@ -55,5 +64,4 @@ public class Demo10 {
         cal.add(Calendar.DATE, 7);
         return cal.getTime();
     }
-
 }

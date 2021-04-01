@@ -1,18 +1,12 @@
 package com.estbon.application.resource.api;
 
 import com.estbon.application.redis.queue.RedisMessage;
-import com.xiaoleilu.hutool.geo.Location;
 import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.geo.Point;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * @author liushuaishuai
@@ -28,16 +22,6 @@ public class RedisResource {
 
     @Autowired
     private RedisTemplate<String, Object> redisTemplateJson;
-
-
-    @GetMapping("/up")
-    @ApiOperation("test")
-    public void up() {
-        Location location = new Location(1, 2);
-        Map<Object, Point> memberCoordinateMap = new HashMap<>();
-        memberCoordinateMap.put("shanghai", new Point(1, 2));
-        Long add = redisTemplateJson.opsForGeo().add("123", memberCoordinateMap);
-    }
 
 
     @GetMapping()
