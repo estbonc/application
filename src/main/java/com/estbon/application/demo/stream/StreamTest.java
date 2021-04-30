@@ -21,11 +21,13 @@ public class StreamTest {
     public static void main(String[] args) {
         List<Integer> b = Lists.newArrayList(1, 2, 3);
 
+        b.parallelStream().forEach(System.out::println);
+
         List<TestBean> a = Lists.newArrayList();
 
         Map<Integer, TestBean> beanMap = a.stream().collect(Collectors.toMap(TestBean::getId, Function.identity()));
 
-        System.out.println("beanMap  "+ beanMap);
+        System.out.println("beanMap  " + beanMap);
 
         a.add(new TestBean(null, 4));
         a.add(new TestBean(1, 3));
