@@ -27,8 +27,8 @@ public class Singleton {
 
     public static void main(String[] args) {
         getInstance(true);
-        System.out.println("----");
-        getInstance(false);
+//        System.out.println("----");
+//        getInstance(false);
     }
 
 //    $ javac Singleton.java
