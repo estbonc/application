@@ -4,6 +4,7 @@ package com.estbon.application.demo.demo;
 import com.google.common.collect.Maps;
 
 import java.util.HashMap;
+import java.util.Stack;
 
 /**
  * @author liushuaishuai
@@ -21,6 +22,12 @@ public class TmpDemo {
         System.out.println("Math.negateExact :"+Math.negateExact(aaa));
         map.put(-aaa,new Object());
         System.out.println(map.get(-aaa));
+
+        Stack<Integer> stack = new Stack<>();
+
+        stack.push(1);
+
+
     }
 
 }
