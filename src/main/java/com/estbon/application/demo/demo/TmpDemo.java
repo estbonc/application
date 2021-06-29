@@ -14,19 +14,27 @@ public class TmpDemo {
 
 
     public static void main(String[] args) {
-       Long aaa= 3L;
 
-        HashMap<Long, Object> map = Maps.newHashMap();
-        System.out.println(-aaa);
 
-        System.out.println("Math.negateExact :"+Math.negateExact(aaa));
-        map.put(-aaa,new Object());
-        System.out.println(map.get(-aaa));
+//        String s = "23.5";
+//
+//        String[] split = s.split("\\.");
+//
+//        if (split.length == 1) {
+//            String ab = split[0];
+//            for (int i = 0; i < ab.length(); i++) {
+//                ab.charAt(i)* Math.pow()
+//
+//            }
+//
+//
+//        }
+//
+//        if (split.length == 2) {
+//
+//        }
 
-        Stack<Integer> stack = new Stack<>();
-
-        stack.push(1);
-
+        System.out.println( 2 * Math.pow(10,2));
 
     }
 
