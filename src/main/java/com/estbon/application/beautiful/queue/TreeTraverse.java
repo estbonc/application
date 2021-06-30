@@ -1,5 +1,6 @@
 package com.estbon.application.beautiful.queue;
 
+import com.estbon.application.beautiful.TreeNode;
 import com.google.common.collect.Lists;
 
 import java.util.ArrayDeque;
@@ -11,6 +12,8 @@ import java.util.PriorityQueue;
 import java.util.Queue;
 
 /**
+ * 用队列层级遍历树的节点
+ *
  * @author liushuaishuai
  * @date 2021/6/14 20:44
  */
